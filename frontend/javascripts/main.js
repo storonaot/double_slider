@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let textWidth = document.querySelector('.text-slider').offsetWidth + 2
   let photoWidth = document.querySelector('.photos-slider').offsetWidth + 2
 
-  console.log(textWidth);
-
   let textItems = [].slice.call(document.querySelectorAll('.text-slider-item'))
   let photoItems = [].slice.call(document.querySelectorAll('.photos-slider-item'))
 
@@ -69,21 +67,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
+  function addSize() {
+    // проходимся по всем элементам и задаем им ширину контейнера
+    textItems.forEach(element => {
+      element.style.width = textWidth + 'px'
+    })
+
+    // проходимся по всем элементам и задаем им ширину контейнера
+    photoItems.forEach(element => {
+      element.style.width = photoWidth + 'px'
+    })
+  }
+
   function slide(activeSlide, control) {
     let start = Date.now()
     let timer = setInterval(() => {
       let timePassed = Date.now() - start
       if (timePassed >= 300) {
+        // после завершения анимации, убираем погрешность в размере путем пересчета позиции слайдера
+        // умножая ширину контейнера на номер активного слайда
         reCalcWidth(activeSlide)
         clearInterval(timer)
         return
       }
+      //с каждей итерацией функции перерисовываем позицию на которой должен находиться слайдер
       draw(timePassed, textPosition, photoPosition, control)
     }, 1)
   }
 
   function draw(timePassed, textPosition, photoPosition, control) {
+    // на сколько пикселей в секунду сдвигается 1 слайдер
     let pxPerSecText = 300 / textWidth
+    // на сколько пикселей в секунду сдвигается 2 слайдер
     let pxPerSecPhot = 300 / photoWidth
     if (control === 'left') {
       textPosition = parseInt(textPosition) + timePassed / pxPerSecText + 'px'
@@ -104,15 +119,5 @@ document.addEventListener('DOMContentLoaded', () => {
     //ворой слайдер
     photoPosition = -(activeSlide * photoWidth) + 'px'
     photosSliderContent.style.marginLeft = photoPosition
-  }
-
-  function addSize() {
-    textItems.forEach(element => {
-      element.style.width = textWidth + 'px'
-    })
-
-    photoItems.forEach(element => {
-      element.style.width = photoWidth + 'px'
-    })
   }
 })
