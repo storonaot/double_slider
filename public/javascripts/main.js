@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // при ресайзе окна, пересчитываем базовую ширину каждого слайда
   window.addEventListener('resize', () => {
-    textWidth = document.querySelector('.text-slider').offsetWidth + 2;
-    photoWidth = document.querySelector('.photos-slider').offsetWidth + 2;
+    textWidth = document.querySelector('.text-slider').offsetWidth;
+    photoWidth = document.querySelector('.photos-slider').offsetWidth;
     addSize();
   });
   window.addEventListener('resize', () => {
