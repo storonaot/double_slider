@@ -69,12 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function addSize() {
     // проходимся по всем элементам и задаем им ширину контейнера
-    textItems.forEach(element => {
+    textItems.forEach(function(element) {
       element.style.width = textWidth + 'px';
     });
 
     // проходимся по всем элементам и задаем им ширину контейнера
-    photoItems.forEach(element => {
+    photoItems.forEach(function(element) {
       element.style.width = photoWidth + 'px';
     });
   }
