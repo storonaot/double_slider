@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let textWidth = document.querySelector('.text-slider').offsetWidth
   let photoWidth = document.querySelector('.photos-slider').offsetWidth
 
+  console.log(textWidth);
+
   let textItems = [].slice.call(document.querySelectorAll('.text-slider-item'))
   let photoItems = [].slice.call(document.querySelectorAll('.photos-slider-item'))
 
@@ -76,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timer)
         return
       }
-      draw(timePassed, textPosition, photoPosition,  control)
+      draw(timePassed, textPosition, photoPosition, control)
     }, 1)
   }
 
