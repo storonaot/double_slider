@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // добавляем каждому слайду такую же ширину как у контейнера
   addSize();
 
-  // при ресайзе окна, пересчитываем базовую каждого слайда
+  // при ресайзе окна, пересчитываем базовую ширину каждого слайда
   window.addEventListener('resize', () => {
-    textWidth = document.querySelector('.text-slider').offsetWidth;
-    photoWidth = document.querySelector('.photos-slider').offsetWidth;
+    textWidth = document.querySelector('.text-slider').offsetWidth + 2;
+    photoWidth = document.querySelector('.photos-slider').offsetWidth + 2;
     addSize();
   });
   window.addEventListener('resize', () => {
