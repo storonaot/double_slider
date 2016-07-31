@@ -1,0 +1,83 @@
+.wrapper
+  // display: flex
+  position: relative
+
+.container-left
+  width: 50vw
+  min-height: 100vh
+  background-color: #c7f1a7
+  position: absolute
+  z-index: 1
+  padding: 50px
+
+.container-right
+  width: 50vw
+  min-height: 100vh
+  background-color: #f5d191
+  position: absolute
+  z-index: 0
+  right: 0
+
+.title
+  font-size: 24px
+  text-align: center
+  margin-bottom: 10px
+
+.other-block
+  margin-bottom: 20px
+
+.text-slider
+  width: 100%
+  overflow: hidden
+
+.photos-slider
+  width: 100%
+  overflow: hidden
+
+.text-slider-list
+  width: 9999px
+
+.photos-slider-list
+  width: 9999px
+
+.text-slider-item
+  display: inline-block
+
+.photos-slider-item
+  display: inline-block
+  width: 640px
+
+.text-block
+  min-height: 200px
+
+.photos-block
+  height: 100vh
+
+.text-block, .photos-block
+  &.red
+    background-color: #ea9191
+  &.green
+    background-color: #91c74a
+  &.yellow
+    background-color: #e0e04f
+  &.blue
+    background-color: #99bbde
+  &.violet
+    background-color: #b88eca
+
+.controls-tmp
+  display: flex
+  margin-top: 20px
+
+.control
+  padding: 10px
+  background-color: #636363
+  flex-grow: 1
+  color: #fff
+  cursor: pointer
+  text-align: center
+
+.control-right
+  margin-left: 20px
+.control-left
+  margin-right: 20px

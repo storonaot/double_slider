@@ -32,5 +32,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "postcss-inline-svg": "^2.0.1",
     "vue": "^1.0.26"
+  },
+  "dependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
   }
 }
