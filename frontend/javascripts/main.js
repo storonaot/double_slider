@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let controlLeft = document.querySelector('.control-left')
   let controlRight = document.querySelector('.control-right')
 
-  let textWidth = document.querySelector('.text-slider').offsetWidth
-  let photoWidth = document.querySelector('.photos-slider').offsetWidth
+  let textWidth = document.querySelector('.text-slider').offsetWidth + 2
+  let photoWidth = document.querySelector('.photos-slider').offsetWidth + 2
 
   console.log(textWidth);
 
@@ -83,13 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function draw(timePassed, textPosition, photoPosition, control) {
-    let pxPerSec = 300 / textWidth
+    let pxPerSecText = 300 / textWidth
+    let pxPerSecPhot = 300 / photoWidth
     if (control === 'left') {
-      textPosition = parseInt(textPosition) + timePassed / pxPerSec + 'px'
-      photoPosition = parseInt(photoPosition) + timePassed / pxPerSec + 'px'
+      textPosition = parseInt(textPosition) + timePassed / pxPerSecText + 'px'
+      photoPosition = parseInt(photoPosition) + timePassed / pxPerSecPhot + 'px'
     } else {
-      textPosition = parseInt(textPosition) - timePassed / pxPerSec + 'px'
-      photoPosition = parseInt(photoPosition) - timePassed / pxPerSec + 'px'
+      textPosition = parseInt(textPosition) - timePassed / pxPerSecText + 'px'
+      photoPosition = parseInt(photoPosition) - timePassed / pxPerSecPhot + 'px'
     }
     textSliderContent.style.marginLeft = textPosition
     photosSliderContent.style.marginLeft = photoPosition
